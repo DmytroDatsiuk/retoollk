@@ -1,6 +1,7 @@
 // Імпортуємо хук
 import { useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
+import { Div } from './ContactCounter.styled';
 
 export const ContactCounter = () => {
   // Отримуємо масив завдань із стану Redux
@@ -24,10 +25,10 @@ export const ContactCounter = () => {
   );
 
   return (
-    <div>
-      <p>All: {count.all}</p>
-      <p>Choosen: {count.choosen}</p>
-      <p>Blocked: {count.blocked}</p>
-    </div>
+    <Div>
+      <span>All: {count.all}</span>
+      <span>Choosen: {count.choosen}</span>
+      <span>Blocked: {count.blocked}</span>
+    </Div>
   );
 };

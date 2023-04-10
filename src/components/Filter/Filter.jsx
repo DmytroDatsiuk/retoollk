@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { FilterBox, FilterInput, Label } from './Filter.styled';
-import { contactFilter } from 'redux/actions';
-// import { contactFilter } from 'redux/actions';
+import { filterContact } from 'redux/filterSlice';
+// import { filterContact } from 'redux/actions';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const Filter = () => {
           name="name"
           placeholder="Search contact"
           onChange={e => {
-            dispatch(contactFilter(e.currentTarget.value));
+            dispatch(filterContact(e.currentTarget.value));
           }}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         />

@@ -4,7 +4,7 @@ import React from 'react';
 import { Form, FormField, ErrorMessage, Field } from './ContactForm.styled';
 import { Button } from 'components/Button/Button';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/actions';
+import { addContact } from 'redux/contactsSlice';
 
 const Schema = Yup.object({
   name: Yup.string()
@@ -26,8 +26,6 @@ export const ContactForm = () => {
     const formName = event.nativeEvent.srcElement.elements.name.value;
     const formNumber = event.nativeEvent.srcElement.elements.number.value;
 
-    // Викликаємо генератор екшену та передаємо текст завдання для поля payload
-    // Відправляємо результат – екшен створення завдання
     dispatch(addContact(formName, formNumber));
     form.reset();
   };

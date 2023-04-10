@@ -3,8 +3,8 @@ import React from 'react';
 import { Item, List } from './ContactList.styled';
 import { useSelector } from 'react-redux';
 import { statusFilters } from 'redux/constants';
-import { getContacts, getContactsFilter } from 'redux/selectors';
-// import { getContactsFilter } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
+import { getContactsFilter } from 'redux/selectors';
 
 const getVisibleContacts = (contacts, statusFilter) => {
   switch (statusFilter) {

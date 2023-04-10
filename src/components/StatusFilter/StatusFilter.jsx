@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { statusFilters } from 'redux/constants';
 import { Button } from 'components/Button/Button';
 import { getStatusFilter } from 'redux/selectors';
-import { setStatusFilter } from 'redux/actions';
+import { setStatusFilter } from 'redux/statusFilterSlice';
+import { Wrapper } from './StatusFilter.styled';
 
 export const StatusFilter = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const StatusFilter = () => {
   const handleFilterChange = filter => dispatch(setStatusFilter(filter));
 
   return (
-    <div>
+    <Wrapper>
       <Button
         selected={filter === statusFilters.all}
         onClick={() => handleFilterChange(statusFilters.all)}
@@ -34,6 +35,6 @@ export const StatusFilter = () => {
       >
         Blocked
       </Button>
-    </div>
+    </Wrapper>
   );
 };

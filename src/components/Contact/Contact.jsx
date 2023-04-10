@@ -2,7 +2,11 @@ import { Button, Input, Label, LabelText } from './Contact.styled';
 // Імпортуємо хук
 import { useDispatch } from 'react-redux';
 // Імпортуємо генератор екшену
-import { deleteContact, toggleBlocked, toggleChoosen } from 'redux/actions';
+import {
+  deleteContact,
+  toggleBlocked,
+  toggleChoosen,
+} from 'redux/contactsSlice';
 
 import { FiStar } from 'react-icons/fi';
 import { AiFillStar } from 'react-icons/ai';
