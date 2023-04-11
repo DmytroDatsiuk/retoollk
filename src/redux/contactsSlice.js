@@ -78,7 +78,7 @@ const contactsSlice = createSlice({
     },
 
     deleteAllBlocked(state) {
-      return state.items.filter(contact => !contact.blocked);
+      return { items: state.items.filter(contact => !contact.blocked) };
     },
   },
 });
